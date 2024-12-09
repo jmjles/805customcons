@@ -1,0 +1,28 @@
+.NavActive {
+  font-size: 38px;
+  font-weight: bold;
+  border-image: linear-gradient(to right, #fff600 35%, transparent 50%) 100% 1;
+  border-bottom: 4px solid;
+}
+
+.NavLink {
+  font-size: 32px;
+  transition: all 0.3s ease-in-out;
+}
+
+.NavLink:hover {
+  font-size: 38px;
+  font-weight: bold;
+  border-image: linear-gradient(to right, #fff600 35%, transparent 50%) 100% 1;
+  border-bottom: 4px solid;
+}
+
+.HomepageSpacer {
+  height: calc(100vh - 198px);
+}
+
+@media screen and (max-width: 850px) {
+  .Nav {
+    display: none;
+  }
+}
