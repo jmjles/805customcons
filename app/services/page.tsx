@@ -1,9 +1,14 @@
-import React from 'react'
+import Services from "@/components/ServiceGrid/Services";
+import ServiceGrid from "@/components/ServiceGrid/ServiceGrid";
+import React from "react";
+import { Container } from "@mui/material";
 
-const Services = () => {
+const ServicesC = () => {
   return (
-    <div>Services</div>
-  )
-}
+    <Container>
+      <ServiceGrid services={Services} />
+    </Container>
+  );
+};
 
-export default Services
+export default ServicesC;

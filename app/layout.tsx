@@ -1,39 +1,46 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
-import Header from "@/components/layout/Header";
+"use client";
 import Footer from "@/components/layout/Footer";
 import MobileMenu from "@/components/layout/MobileMenu";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-
-export const metadata: Metadata = {
-  title: "805CustomBuilders | Home",
-  description:
-    "Born & Raised in The Great 805🇺🇸 | Hands on General Contractor Builder🛠️🪚🏘️ | Family Owned & Operated",
-};
+import "./globals.css";
+import { CssBaseline } from "@mui/material";
+import { ThemeProvider } from "@emotion/react";
+import { createTheme } from "@mui/material";
+import "@fontsource/orelega-one";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const theme = createTheme({
+    typography: {
+      fontFamily: "Orelega One",
+      h1: {
+        fontSize: 128,
+      },
+      h2: {
+        fontSize: 96,
+      },
+      body1: {
+        fontSize: 48,
+      },
+      body2: {
+        fontSize: 32,
+      },
+      button: {
+        fontSize: 48,
+      },
+    },
+  });
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Header />
-        <MobileMenu />
-        {children}
-        <Footer />
+      <body>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          {children}
+          <MobileMenu />
+          {/* <Footer /> */}
+        </ThemeProvider>
       </body>
     </html>
   );
