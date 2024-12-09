@@ -100,6 +100,7 @@ const Header = (props: headerProps) => {
           height: "100%",
           zIndex: -999,
           top: 0,
+          minHeight:780+199
         }}
       >
         <Image src={props.image.src} alt={props.image.alt} fill />
@@ -110,6 +111,7 @@ const Header = (props: headerProps) => {
             height: "100vh",
             position: "absolute",
             top: 0,
+            minHeight:780+199
           }}
         ></div>
         <Container

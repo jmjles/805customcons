@@ -18,7 +18,9 @@
 }
 
 .HomepageSpacer {
-  height: calc(100vh - 198px);
+  height: calc(100vh - 199px);
+  z-index: -1;
+  min-height: 780px;
 }
 
 @media screen and (max-width: 850px) {

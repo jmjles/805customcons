@@ -1,0 +1,46 @@
+.Introduction {
+  background-color: #fff;
+  padding-bottom: 120px;
+}
+.Introduction .Title {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.Introduction .ImageContainer {
+  width: 110%;
+  position: absolute;
+  left: 0px;
+  height: 416px;
+}
+
+.Introduction .Image {
+  border-radius: 10px;
+}
+
+.Introduction .Divider {
+  border-color: #fff600;
+  border-width: 5px;
+  margin-right: 30px;
+}
+
+.GalleryCTA {
+  width: 100%;
+  height: 144px;
+  position: relative;
+}
+
+.GalleryCTA .Content {
+    transform: translateY(50%);
+}
+.GalleryCTA .Image {
+  width: 100%;
+  border-radius: 0px;
+  transform: translateY(-50%);
+  position: fixed;
+  z-index: -9999;
+  top: 0;
+}
+.GalleryCTA .Shade {
+  height: 100%;
+}
