@@ -1,26 +1,61 @@
 .NavActive {
   font-size: 38px;
   font-weight: bold;
-  border-image: linear-gradient(to right, #fff600 35%, transparent 50%) 100% 1;
-  border-bottom: 4px solid;
+  border-bottom: #fff600 solid 5px;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 90%,
+    0 90%,
+    0 90%,
+    45% 90%,
+    45% 100%,
+    0 100%
+  );
 }
 
 .NavLink {
   font-size: 32px;
-  transition: all 0.3s ease-in-out;
+  border-bottom: #fff600 solid 5px;
+  transition: all 0.3s;
+  color: #000;
+  cursor: pointer;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 90%,
+    0 90%,
+    0 90%,
+    0 90%,
+    0 100%,
+    0 100%
+  );
 }
 
 .NavLink:hover {
-  font-size: 38px;
-  font-weight: bold;
-  border-image: linear-gradient(to right, #fff600 35%, transparent 50%) 100% 1;
-  border-bottom: 4px solid;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 90%,
+    0 90%,
+    0 90%,
+    45% 90%,
+    45% 100%,
+    0 100%
+  );
 }
 
 .HomepageSpacer {
-  height: calc(100vh - 199px);
+  height: calc(100vh - 187px);
   z-index: -1;
   min-height: 780px;
+}
+
+.Placeholder {
+  height: 136px;
+  width: 100%;
 }
 
 @media screen and (max-width: 850px) {

@@ -20,7 +20,7 @@
 
 .Introduction .Divider {
   border-color: #fff600;
-  border-width: 5px;
+  border-width: 3px;
   margin-right: 30px;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .GalleryCTA .Content {
-    transform: translateY(50%);
+  transform: translateY(50%);
 }
 .GalleryCTA .Image {
   width: 100%;
@@ -39,8 +39,120 @@
   transform: translateY(-50%);
   position: fixed;
   z-index: -9999;
-  top: 0;
+  top: 50%;
 }
-.GalleryCTA .Shade {
+
+.GalleryCTA .Overlay {
   height: 100%;
+}
+
+.GalleryCTA .Button {
+  border: #fff solid 3px;
+  border-radius: 10px;
+  padding: 0 20px;
+  transition: all 0.3s;
+  color: #fff;
+  cursor: pointer;
+}
+
+.GalleryCTA .Button:hover {
+  border: #fff600 solid 3px;
+  color: #fff600;
+}
+
+.AboutCTA {
+  height: 110vh;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.AboutCTA .Content {
+  transform: translateY(50%);
+}
+
+.AboutCTA .Divider {
+  border-color: #fff600;
+  border-width: 3px;
+  margin-right: 100px;
+  height: 200px;
+}
+
+.AboutCTA .Button {
+  border-radius: 10px;
+  border: #000 solid 3px;
+  padding: 0 20px;
+  display: inline-block;
+  transition: all 0.3s;
+  color: #fff600;
+  cursor: pointer;
+  margin-top: 60px;
+}
+
+.AboutCTA .Button:hover {
+  border: #fff600 solid 3px;
+}
+
+.ServicesCTA {
+  background-color: #fff;
+}
+.ServicesCTA .Divider {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-color: #fff600;
+  border-width: 3px;
+  height: 600px;
+  z-index: 20;
+}
+.ServicesCTA .MediaContainer {
+  position: relative;
+}
+.ServicesCTA .Media {
+  position: relative;
+}
+
+.Media .Content {
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+}
+.Media .Image {
+  height: 612px;
+  width: 100%;
+}
+.Media .Overlay {
+  position: absolute;
+  width: 100%;
+  height: 612px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.ServicesCTA .Content {
+  text-align: center;
+  margin-top: -100px;
+}
+
+.ServicesCTA .Content h1 {
+  z-index: 20;
+  position: relative;
+}
+.ServicesCTA .Button {
+  border-bottom: #fff600 solid 5px;
+  padding: 0 20px;
+  display: inline-block;
+  transition: all .3s;
+  color: #000;
+  cursor: pointer;
+  margin-top: 60px;
+  margin-bottom: 20px;
+
+  clip-path: polygon(0 0,100% 0,100% 90%,0 90%, 0 90%, 0 90%, 0 100%, 0 100%);
+}
+
+.ServicesCTA .Button:hover {
+    clip-path: polygon(0 0,100% 0,100% 90%,0 90%, 0 90%, 100% 90%, 100% 100%, 0 100%);
 }

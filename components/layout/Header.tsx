@@ -1,74 +1,78 @@
+"use client";
 import { Container, Grid2, Typography as Font, Divider } from "@mui/material";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Logo from "@/assets/images/805 Custom Builder Logo.webp";
 import { Links } from "./Links";
 import { LocationOn, Phone } from "@mui/icons-material";
 import { socials } from "./Footer";
 import { Image as ImageType } from "@/assets/images/Images";
 import Image from "next/image";
-import "./header.css"
+import "./header.css";
 const logoWidth = 175.9;
 const Header = (props: headerProps) => {
+  const header = useRef<HTMLElement>(null);
+  const placeholder = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const navPos = () => {
+      const hasClass = header.current?.classList.contains("Fixed");
+      const addClass = window.scrollY >= 51;
+      if (addClass && !hasClass) {
+        header.current?.classList.add("Fixed");
+        placeholder.current?.classList.add("Placeholder");
+      }
+      if (!addClass && hasClass) {
+        header.current?.classList.remove("Fixed");
+        placeholder.current?.classList.remove("Placeholder");
+      }
+    };
+    window.addEventListener("scroll", navPos);
+    return () => {
+      window.removeEventListener("scroll", navPos);
+    };
+  }, []);
   return (
     <header style={{ fontSize: 24 }}>
       <div style={{ backgroundColor: "yellow", width: "100%", padding: 6 }}>
         <Container>
           <Grid2 justifyContent="space-between" container>
-            <Grid2 container spacing={2} alignItems="flex-end">
+            <Grid2 container spacing={2}>
               {socials.map((s) => (
-                <Grid2>
-                  <a href={s.link}>
-                    <s.icon />
-                  </a>
+                <Grid2 component={"a"} href={s.link} height={35}>
+                  <s.icon fontSize="large" />
                 </Grid2>
               ))}
             </Grid2>
             <Grid2 container spacing={3}>
-              <Grid2 container alignItems="flex-end" spacing={0}>
-                <Grid2>
-                  <LocationOn />
-                </Grid2>
-                <Grid2>
-                  <Font sx={{ fontSize: 26 }}>Moorpark,Ca</Font>
-                </Grid2>
+              <Grid2 container spacing={0} alignItems="center">
+                <LocationOn fontSize="large" />
+                <Font sx={{ fontSize: 26 }}>Moorpark,Ca</Font>
               </Grid2>
               <Grid2
                 container
-                alignItems="flex-end"
                 component="a"
                 href="tel:888-888-8888"
                 spacing={1}
+                alignItems="center"
               >
-                <Grid2>
-                  <Phone />
-                </Grid2>
-                <Grid2>
-                  <Font sx={{ fontSize: 26 }}>888-888-8888</Font>
-                </Grid2>
+                <Phone fontSize="large" />
+                <Font sx={{ fontSize: 26 }}>888-888-8888</Font>
               </Grid2>
             </Grid2>
           </Grid2>
         </Container>
       </div>
-      <div
+      <nav
         style={{
           backgroundColor: "#FFF",
-          position: "sticky",
-          top: "0px",
           zIndex: 99,
         }}
         className="Nav"
+        ref={header}
       >
-        <Container sx={{ position: "sticky", top: "0px", padding: 1 }}>
+        <Container sx={{ top: "0px", padding: 1 }}>
           <Grid2 container justifyContent="space-between">
-            <Grid2>
-              <Image
-                src={Logo}
-                alt="805 Custom Builder Logo"
-                width={logoWidth}
-              />
-            </Grid2>
+            <Image src={Logo} alt="805 Custom Builder Logo" width={logoWidth} />
             <Grid2
               container
               wrap="nowrap"
@@ -92,7 +96,8 @@ const Header = (props: headerProps) => {
             <Grid2 sx={{ width: logoWidth }}></Grid2>
           </Grid2>
         </Container>
-      </div>
+      </nav>
+      <div ref={placeholder} />
       <div
         style={{
           position: "absolute",
@@ -100,7 +105,7 @@ const Header = (props: headerProps) => {
           height: "100%",
           zIndex: -999,
           top: 0,
-          minHeight:780+199
+          minHeight: 780 + 199,
         }}
       >
         <Image src={props.image.src} alt={props.image.alt} fill />
@@ -111,7 +116,7 @@ const Header = (props: headerProps) => {
             height: "100vh",
             position: "absolute",
             top: 0,
-            minHeight:780+199
+            minHeight: 780 + 199,
           }}
         ></div>
         <Container

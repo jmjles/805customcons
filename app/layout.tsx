@@ -38,8 +38,8 @@ export default function RootLayout({
         <ThemeProvider theme={theme}>
           <CssBaseline />
           {children}
-          <MobileMenu />
-          {/* <Footer /> */}
+          {/* <MobileMenu /> */}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

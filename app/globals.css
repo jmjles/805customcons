@@ -8,9 +8,15 @@ a {
   transition: all 0.5s;
 }
 
-.Shade {
+.Overlay {
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.Fixed{
+  position: fixed;
   top: 0px;
   width: 100%;
 }
